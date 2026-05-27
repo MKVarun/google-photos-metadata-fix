@@ -48,7 +48,7 @@ def get_exif_dt(ts: int):
     tz_offset = f"{offset[:3]}:{offset[3:]}"
     return dt.strftime(f"%Y:%m:%d %H:%M:%S{tz_offset}")
 
-def fix_screenshot(photo_path: Path, json_path: Path):
+def fix_photo(photo_path: Path, json_path: Path):
     # To fix fake png errors
     if photo_path.suffix.lower() == ".png":
         result = subprocess.run(["file", str(photo_path)], capture_output=True, text=True)
@@ -151,7 +151,7 @@ def process_screenshots(root_folder: str):
                 continue
 
             print(f"  Fixing: {photo_file.name}")
-            ok = fix_screenshot(photo_file, json_path)
+            ok = fix_photo(photo_file, json_path)
             if ok:
                 success.append(str(photo_file))
                 print(f"  Done ✅")
@@ -178,5 +178,5 @@ if __name__ == "__main__":
     process_screenshots("../Photos")
 
     # Process single photo
-    # fix_screenshot(Path("../Photos/Photos from 2021/photo_1.jpg"),   
+    # fix_photo(Path("../Photos/Photos from 2021/photo_1.jpg"),   
     #                 Path("../Photos/Photos from 2021/photo_2.jpg.json"))
