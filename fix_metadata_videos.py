@@ -132,5 +132,5 @@ def process_folder(root_folder: str):
         for f in failed:
             print(f"  {f}")
 
-
-process_folder("../Photos")  # update to your root folder path
+if __name__ == "__main__":
+    process_folder("../Photos")  # update to your root folder path
