@@ -49,3 +49,5 @@ Edit `get_timezone_for_ts()` to adjust custom timezone cutoffs for specific year
 ## Output
 
 Prints a summary of successful, skipped, and failed files upon completion. Original files are modified in-place.
+
+<img width="578" height="646" alt="output" src="https://github.com/user-attachments/assets/67e8a1d3-7445-4b68-9f37-b40dd46ab412" />
